@@ -33,9 +33,17 @@
 
         <div class="col-md-9">
 
-         <iframe width="963" height="467" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vStM6rCQuKXpOqTeFqo4pLnU_FVAh2LZ0yZ1WrAJuO8ZPMIh_U9fxxZaz2vnFjX7gKMjzadLDfYHa_J/pubchart?oid=45480953&amp;format=interactive"></iframe>
+         <iframe width="820" height="460" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vStM6rCQuKXpOqTeFqo4pLnU_FVAh2LZ0yZ1WrAJuO8ZPMIh_U9fxxZaz2vnFjX7gKMjzadLDfYHa_J/pubchart?oid=45480953&amp;format=interactive"></iframe>
          </div>
-         <div class="col-md-3" style="text-align: center;"> Observaciones</div>
+         <div class="col-md-3" style="text-align: center;"> <h3>Observaciones</h2>
+
+                <div>
+                    * El día 13 Diana estuvo trabajando con centro técnico por indicación de la dirección
+                    <br>
+                    * Alejandra está apoyando a la Ing. Claudia en Medidas Especiales
+                </div>
+         </div>
+
     </div>
 
 
