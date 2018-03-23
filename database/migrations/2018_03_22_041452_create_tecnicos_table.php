@@ -14,7 +14,7 @@ class CreateTecnicosTable extends Migration
     public function up()
     {
         Schema::create('tecnicos', function (Blueprint $table) {
-            $table->string('id');
+            $table->increments('id');
             $table->string('id_cuadrilla');
             $table->string('id_actividad');
             $table->string('NIC');
