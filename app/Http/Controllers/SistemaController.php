@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Tecnico;
+use App\Sistema;
 
-class TecnicoController extends Controller
+class SistemaController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -25,8 +25,8 @@ class TecnicoController extends Controller
     public function index()
     {
         //Cargar actividades
-        $tecnicos = Tecnico::orderBy('id','DESC')->paginate(3);
-        return view('Tecnico.index',compact('tecnicos'));
+        $sistemas = Sistema::orderBy('id','DESC')->paginate(3);
+        return view('Sistema.index',compact('sistemas'));
     }
 
     /**
@@ -37,7 +37,7 @@ class TecnicoController extends Controller
     public function create()
     {
         //
-        return view('Tecnico.create');
+        return view('Sistema.create');
     }
 
     /**
@@ -49,9 +49,9 @@ class TecnicoController extends Controller
     public function store(Request $request)
     {
         //
-        $this->validate($request,['id_cuadrilla'=>'required', 'id_actividad'=>'required', 'NIC'=>'required']);
-        Tecnico::create($request->all());
-        return redirect()->route('tecnico.index')->with('success','Ingreso Correcto');
+         $this->validate($request,['id'=>'', 'email'=>'required', 'proceso'=>'required', 'OS'=>'required', 'fecha'=>'required', 'cuadrilla'=>'required', 'actividad'=>'required', 'estado'=>'required', 'materiales'=>'required', 'costo'=>'required']);
+        Sistema::create($request->all());
+        return redirect()->route('sistema.index')->with('success','Ingreso Correcto');
 
     }
 
@@ -64,7 +64,7 @@ class TecnicoController extends Controller
     public function show($id)
     {
         //
-        return view('Tecnico.show',compact('tecnicos'));
+        return view('Sistema.show',compact('sistemas'));
     }
 
     /**
@@ -76,8 +76,8 @@ class TecnicoController extends Controller
     public function edit($id)
     {
         //
-        $tecnico = tecnico::find($id);
-        return view('Tecnico.edit',compact('tecnico'));
+        $tecnico = Sistema::find($id);
+        return view('Sistema.edit',compact('sistemas'));
     }
 
     /**
@@ -90,12 +90,12 @@ class TecnicoController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $this->validate($request,['id_cuadrilla'=>'required', 'id_actividad'=>'required', 'NIC'=>'required']);
-        Tecnico::create($request->all());
-        return redirect()->route('tecnico.index')->whit('success','Ingreso Correcto');
+        $this->validate($request,['id'=>'', 'email'=>'required', 'proceso'=>'required', 'OS'=>'required', 'fecha'=>'required', 'cuadrilla'=>'required', 'actividad'=>'required', 'estado'=>'required', 'materiales'=>'required', 'costo'=>'required']);
+        Sistema::create($request->all());
+        return redirect()->route('sistema.index')->whit('success','Ingreso Correcto');
 
-        Tecnico::find($id)->update($request->all());
-        return redirect()->route('tecnico.index')->with('success', 'Actualización Correcta');
+        Sistema::find($id)->update($request->all());
+        return redirect()->route('sistema.index')->with('success', 'Actualización Correcta');
 
     }
 
@@ -108,8 +108,8 @@ class TecnicoController extends Controller
     public function destroy($id)
     {
         //
-        Tecnico::find($id)->delete();
-        return redirect()->route('tecnico.index')->with('success','Registro Eliminado Correctamente');
+        Sistema::find($id)->delete();
+        return redirect()->route('sistema.index')->with('success','Registro Eliminado Correctamente');
     }
 
 
@@ -118,9 +118,9 @@ class TecnicoController extends Controller
     * @return \Illuminate\Http\Response
     */
 
-    public function getTecnicos()
+    public function getSistemas()
     {
-        $tecnicos = Tecnico::all();
-        return response()->json($tecnicos);
+        $sistemas = Sistema::all();
+        return response()->json($sistemas);
     }
 }

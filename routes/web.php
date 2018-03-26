@@ -19,6 +19,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('tecnico','TecnicoController');
+Route::resource('/tecnico','TecnicoController');
+
+Route::resource('/sistema','SistemaController');
 
 Route::get('api/v1/tecnicos','TecnicoController@getTecnicos');
+
+Route::get('api/v1/sistemas','SistemaController@getSistemas');
